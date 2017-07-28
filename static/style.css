@@ -76,7 +76,7 @@ body {
 }
 
 .menu__item {
-  padding-top: 50px;
+  padding: 60px 0 10px 0;
 
   background: url('./divider.png') center 10px no-repeat;
 }
@@ -102,6 +102,8 @@ body {
 }
 
 .item__price {
+  margin-top: 1.2em;
+
   font-size: 1.5em;
   font-weight: 500;
 }
