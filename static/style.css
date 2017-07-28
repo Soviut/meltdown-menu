@@ -57,6 +57,11 @@ body {
   */
 }
 
+.page {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
 .logo {
   display: inline-block;
   width: 227px;
