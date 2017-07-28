@@ -3,7 +3,7 @@ body {
   padding: 30px;
 
   font-family: arial, helvetica, san-serif;
-  background: #000 url('./background.png');
+  background: #000 url('./background.png') center center no-repeat;
   background-size: cover;
   color: #FFF;
   text-align: center;
@@ -23,4 +23,10 @@ body {
   padding: 0;
 
   list-style: outside none;
+}
+
+.menu__item {
+  padding-top: 40px;
+
+  background: url('./divider.png') center 10px no-repeat;
 }
