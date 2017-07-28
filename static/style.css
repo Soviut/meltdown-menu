@@ -40,9 +40,17 @@
     src: url("./Industry_Ultra.otf") format("opentype");
 }
 
+html {
+  height: 100%;
+}
+
 body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   box-sizing: border-box;
   padding: 30px;
+  height: 100%;
 
   font-family: Industry, arial, helvetica, san-serif;
   background: #000 url('./background.png') top center;
@@ -50,16 +58,18 @@ body {
   color: #FFF;
   text-align: center;
   overflow: hidden;
-
-  /*
-  transform-origin: top;
-  transform: scale(2);
-  */
 }
 
 .page {
   max-width: 400px;
   margin: 0 auto;
+
+  /* need to scale for TV */  
+  /* transform: scale(1.5); */
+}
+
+.page__header {
+  margin-bottom: 60px;
 }
 
 .logo {
@@ -73,7 +83,6 @@ body {
 
 .menu {
   margin: 0 auto;
-  margin-top: 20px;
   padding: 0;
   max-width: 400px;
 
