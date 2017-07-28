@@ -1,9 +1,51 @@
+@font-face {
+    font-family: 'Industry';
+    font-style: normal;
+    font-weight: 300;
+    src: url("../fonts/Industry_Medium.otf") format("opentype");
+}
+
+@font-face {
+    font-family: 'Industry';
+    font-style: normal;
+    font-weight: 400;
+    src: url("./Industry_Book.otf") format("opentype");
+}
+
+@font-face {
+    font-family: 'Industry';
+    font-style: normal;
+    font-weight: normal;
+    src: url("./Industry_Book.otf") format("opentype");
+}
+
+@font-face {
+    font-family: 'Industry';
+    font-style: normal;
+    font-weight: 500;
+    src: url("./Industry_Bold.otf") format("opentype");
+}
+
+@font-face {
+    font-family: 'Industry';
+    font-style: normal;
+    font-weight: bold;
+    src: url("./Industry_Bold.otf") format("opentype");
+}
+
+@font-face {
+    font-family: 'Industry';
+    font-style: normal;
+    font-weight: 700;
+    src: url("./Industry_Ultra.otf") format("opentype");
+}
+
 body {
   box-sizing: border-box;
   padding: 30px;
 
-  font-family: arial, helvetica, san-serif;
-  background: #000 url('./background.png') center center no-repeat;
+  font-family: Industry, arial, helvetica, san-serif;
+  background: #000 url('./background.png') top center;
   background-size: cover;
   color: #FFF;
   text-align: center;
@@ -14,19 +56,45 @@ body {
   width: 227px;
   height: 206px;
 
-  background: url('./logo.png');
+  background: url('./logo.png') center center no-repeat;
   text-indent: -9999px;
 }
 
 .menu {
-  margin: 0;
+  margin: 0 auto;
   padding: 0;
+  max-width: 400px;
 
   list-style: outside none;
 }
 
 .menu__item {
-  padding-top: 40px;
+  padding-top: 50px;
 
   background: url('./divider.png') center 10px no-repeat;
+}
+
+.item {
+}
+
+.item__title {
+  margin: 0;
+  margin-bottom: 0.2em;
+
+  font-size: 2.5em;
+  line-height: 1em;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.item__description {
+  margin: 0;
+  margin-bottom: 0.5em;
+
+  color: #97e300;
+}
+
+.item__price {
+  font-size: 1.5em;
+  font-weight: 500;
 }
