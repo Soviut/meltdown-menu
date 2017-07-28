@@ -49,6 +49,12 @@ body {
   background-size: cover;
   color: #FFF;
   text-align: center;
+  overflow: hidden;
+
+  /*
+  transform-origin: top;
+  transform: scale(2);
+  */
 }
 
 .logo {
