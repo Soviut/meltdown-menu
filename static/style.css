@@ -1,0 +1,26 @@
+body {
+  box-sizing: border-box;
+  padding: 30px;
+
+  font-family: arial, helvetica, san-serif;
+  background: #000 url('./background.png');
+  background-size: cover;
+  color: #FFF;
+  text-align: center;
+}
+
+.logo {
+  display: inline-block;
+  width: 227px;
+  height: 206px;
+
+  background: url('./logo.png');
+  text-indent: -9999px;
+}
+
+.menu {
+  margin: 0;
+  padding: 0;
+
+  list-style: outside none;
+}
