@@ -33,6 +33,6 @@ landscape or portrait modes. It can be served from a laptop or Raspberry Pi.
 
 - Connect a PC or Raspberry Pi to the display via HDMI
 - Open the latest Chrome or Firefox browser
-- Browse to http://soviut.github.io/meltdown-menu
+- Browse to https://soviut.github.io/meltdown-menu/
 - Put the browser in fullscreen mode (press `F11`)
 - Refresh the page any time the specials are updated
