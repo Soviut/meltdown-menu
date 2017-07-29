@@ -53,11 +53,13 @@ disable the screen saver.
 - Open **Internet > Chromium**
 - Browse to [chrome://settings/](chrome://settings/)
 - Find the **On Startup** section
-- Choose **Open a specific page**
+- Choose **Open a specific page or set of pages**
 - Click **Add a New Page**
 - In the **Site URL** field, enter `https://soviut.github.io/meltdown-menu`
 - Click **Add**
+- Click **OK**
 - Close the Settings tab
+- Close Chromium and reopen it to make sure the default page comes up
 
 ### Rotate Display
 
@@ -71,6 +73,26 @@ disable the screen saver.
 - `Ctrl + X` to exit Nano
 - Restart `sudo reboot`
 
-### Boot to Chromium
+### Boot to XWindows
 
-- **TODO**
+- `raspi-config` (use arrow keys and Enter to navigate)
+- Choose **boot_behaviour**
+- Choose **Start desktop on boot**
+- Choose **Finish** to exit
+- Reboot to ensure it boots directly into XWindows
+
+### Chromium Kiosk Mode
+
+Starting Chromium in kiosk mode locks the browser down more 
+and won't show as many on screen prompts.
+
+- `nano ~/.config/autostart/chromium.desktop`
+- Add the following
+```
+[Desktop Entry] 
+Type=Application
+Exec=chromium --kiosk https://soviut.github.io/meltdown-menu
+```
+- `Ctrl + W` to save
+- `Ctrl + X` to exit Nano
+- Restart `sudo reboot`
