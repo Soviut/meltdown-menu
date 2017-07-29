@@ -96,3 +96,13 @@ Exec=chromium --kiosk https://soviut.github.io/meltdown-menu
 - `Ctrl + W` to save
 - `Ctrl + X` to exit Nano
 - Restart `sudo reboot`
+
+### Disable Local Login Prompt
+
+No human intervention should be needed after rebooting so 
+the local login prompt can be disabled. Remote SSH access will 
+still be allowed with a key.
+
+These following are based on [these instructions](http://raspi.tv/2012/how-to-set-up-keys-and-disable-password-login-for-ssh-on-your-raspberry-pi)
+
+**TODO**
