@@ -65,7 +65,7 @@ body {
   margin: 0 auto;
 
   /* need to scale for TV */  
-  /* transform: scale(1.5); */
+  transform: scale(1.6);
 }
 
 .page__header {
