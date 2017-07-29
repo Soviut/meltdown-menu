@@ -95,7 +95,7 @@ We also disable the screensaver and screen blanking.
 @xset -dpms
 @xset s noblank
 
-@/usr/bin/chromium-browser --kiosk --incognito --ignore-certificate-errors --disable-restore-session-state https://soviut.github.io/meltdown-menu
+@/usr/bin/chromium-browser --kiosk --incognito --disable-restore-session-state https://soviut.github.io/meltdown-menu
 ```
 - `Ctrl + W` to save
 - `Ctrl + X` to exit Nano
