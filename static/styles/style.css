@@ -53,7 +53,7 @@ body {
   height: 100%;
 
   font-family: Industry, arial, helvetica, san-serif;
-  background: #000 url('./background.png') top center;
+  background: #000 url('../images/background.png') top center;
   background-size: cover;
   color: #FFF;
   text-align: center;
@@ -77,7 +77,7 @@ body {
   width: 227px;
   height: 206px;
 
-  background: url('./logo.png') center center no-repeat;
+  background: url('../images/logo.png') center center no-repeat;
   text-indent: -9999px;
 }
 
@@ -92,7 +92,7 @@ body {
 .menu__item {
   padding: 60px 0 10px 0;
 
-  background: url('./divider.png') center 10px no-repeat;
+  background: url('../images/divider.png') center 10px no-repeat;
 }
 
 .item {
