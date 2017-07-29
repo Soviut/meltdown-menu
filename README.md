@@ -61,22 +61,6 @@ disable the screen saver.
 - Close the Settings tab
 - Close Chromium and reopen it to make sure the default page comes up
 
-### Disable Screensaver (Screen Blanking)
-
-- `sudo apt-get install x11-xserver-utils unclutter`
-- `sudo nano /etc/xdg/lxsession/LXDE/autostart`
-- Comment out `#@xscreensaver` line
-- Add the following to the end
-```
-@xset s off
-@xset -dpms
-@xset s noblank
-@chromium --kiosk --incognito https://soviut.github.io/meltdown-menu
-```
-- `Ctrl + W` to save
-- `Ctrl + X` to exit Nano
-- Restart `sudo reboot`
-
 ### Rotate Display
 
 - `sudo nano /boot/config.txt`
@@ -99,15 +83,18 @@ disable the screen saver.
 
 ### Chromium Kiosk Mode
 
-Starting Chromium in kiosk mode locks the browser down more 
-and won't show as many on screen prompts.
+Starting Chromium in kiosk mode locks the browser down to prevent tampering.
+We also disable the screensaver and screen blanking.
 
-- `nano ~/.config/autostart/chromium.desktop`
-- Add the following
+- `sudo apt-get install x11-xserver-utils unclutter`
+- `sudo nano /etc/xdg/lxsession/LXDE/autostart`
+- Comment out `#@xscreensaver` line
+- Add the following to the end
 ```
-[Desktop Entry] 
-Type=Application
-Exec=chromium --kiosk https://soviut.github.io/meltdown-menu
+@xset s off
+@xset -dpms
+@xset s noblank
+@chromium --kiosk --incognito https://soviut.github.io/meltdown-menu
 ```
 - `Ctrl + W` to save
 - `Ctrl + X` to exit Nano
