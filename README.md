@@ -87,14 +87,15 @@ Starting Chromium in kiosk mode locks the browser down to prevent tampering.
 We also disable the screensaver and screen blanking.
 
 - `sudo apt-get install x11-xserver-utils unclutter`
-- `sudo nano /etc/xdg/lxsession/LXDE/autostart`
+- `sudo nano /home/pi/.config/lxsession/LXDE-pi/autostart`
 - Comment out `#@xscreensaver` line
 - Add the following to the end
 ```
 @xset s off
 @xset -dpms
 @xset s noblank
-@chromium-browser --kiosk --incognito https://soviut.github.io/meltdown-menu
+
+@/usr/bin/chromium-browser --kiosk --incognito --ignore-certificate-errors --disable-restore-session-state https://soviut.github.io/meltdown-menu
 ```
 - `Ctrl + W` to save
 - `Ctrl + X` to exit Nano
