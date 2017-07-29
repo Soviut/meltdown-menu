@@ -61,6 +61,10 @@ disable the screen saver.
 - Close the Settings tab
 - Close Chromium and reopen it to make sure the default page comes up
 
+### Disable Screensaver (Screen Blanking)
+
+**TODO**
+
 ### Rotate Display
 
 - `sudo nano /boot/config.txt`
