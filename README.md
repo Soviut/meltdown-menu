@@ -94,7 +94,7 @@ We also disable the screensaver and screen blanking.
 @xset s off
 @xset -dpms
 @xset s noblank
-@chromium --kiosk --incognito https://soviut.github.io/meltdown-menu
+@chromium-browser --kiosk --incognito https://soviut.github.io/meltdown-menu
 ```
 - `Ctrl + W` to save
 - `Ctrl + X` to exit Nano
