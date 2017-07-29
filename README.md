@@ -63,7 +63,19 @@ disable the screen saver.
 
 ### Disable Screensaver (Screen Blanking)
 
-**TODO**
+- `sudo apt-get install x11-xserver-utils unclutter`
+- `sudo nano /etc/xdg/lxsession/LXDE/autostart`
+- Comment out `#@xscreensaver` line
+- Add the following to the end
+```
+@xset s off
+@xset -dpms
+@xset s noblank
+@chromium --kiosk --incognito https://soviut.github.io/meltdown-menu
+```
+- `Ctrl + W` to save
+- `Ctrl + X` to exit Nano
+- Restart `sudo reboot`
 
 ### Rotate Display
 
