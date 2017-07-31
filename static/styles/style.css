@@ -40,6 +40,11 @@
     src: url("../fonts/Industry_Ultra.otf") format("opentype");
 }
 
+@keyframes pulse {
+    from { transform: scale(1); }
+    to   { transform: scale(1.05); }
+}
+
 html {
   height: 100%;
 }
@@ -79,6 +84,7 @@ body {
 
   background: url('../images/logo.png') center center no-repeat;
   text-indent: -9999px;
+  animation: pulse 1300ms ease-in-out infinite alternate;
 }
 
 .menu {
