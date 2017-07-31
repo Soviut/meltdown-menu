@@ -47,6 +47,22 @@ If you're using a Raspberry Pi, the following configuration will boot
 directly into Chromium, orient the screen vertically (portrait) and 
 disable the screen saver.
 
+### Flash SD Card
+
+- Download a ZIP of the [latest version of Raspbian (Jessie)](https://downloads.raspberrypi.org/raspbian_latest)
+- Download an install [Etcher](https://etcher.io/)
+- Plug the SD card into the computer
+- Start Etcher
+- Click **Select Image**
+- Choose the zip file containing Raspbian
+- Click **Choose Drive**
+- Choose the SD card (it should automatically select if it's the only card plugged in)
+- Click **Flash**
+- Wait for the flashing process to complete
+- Remove the SD card from the computer
+- Make sure the Raspberry Pi is off and unplugged
+- Plug the SD into the Raspberry Pi
+
 ### Default Page in Chromium
 
 - Open XWindows `startx`
