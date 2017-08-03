@@ -142,6 +142,7 @@ body {
 
   background-position: center center;
   background-repeat: no-repeat;
+  background-size: contain;
 }
 
 .social__icon + .social__icon {
@@ -154,8 +155,6 @@ body {
 
 .social__icon--twitter {
   background-image: url('../images/icon-twitter.png');
-  /* HACK: because icon contains whitespace */
-  background-size: 130%;
 }
 
 .social__icon--instagram {
