@@ -77,6 +77,10 @@ body {
   margin-bottom: 60px;
 }
 
+.page__footer {
+  margin-top: 60px;
+}
+
 .logo {
   display: inline-block;
   width: 227px;
@@ -129,8 +133,6 @@ body {
 }
 
 .social {
-  margin: 0;
-  margin-bottom: 0.5em;
 }
 
 .social__icon {
@@ -140,6 +142,10 @@ body {
 
   background-position: center center;
   background-repeat: no-repeat;
+}
+
+.social__icon + .social__icon {
+  margin-left: 10px;
 }
 
 .social__icon--facebook {
@@ -161,5 +167,7 @@ body {
 }
 
 .social__link {
+  margin-top: 0.5em;
+
   color: #97e300;
 }
