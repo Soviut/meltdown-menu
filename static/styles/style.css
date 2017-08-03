@@ -127,3 +127,39 @@ body {
   font-size: 1.5em;
   font-weight: 500;
 }
+
+.social {
+  margin: 0;
+  margin-bottom: 0.5em;
+}
+
+.social__icon {
+  display: inline-block;
+  width: 35px;
+  height: 35px;
+
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.social__icon--facebook {
+  background-image: url('../images/icon-facebook.png');
+}
+
+.social__icon--twitter {
+  background-image: url('../images/icon-twitter.png');
+  /* HACK: because icon contains whitespace */
+  background-size: 130%;
+}
+
+.social__icon--instagram {
+  background-image: url('../images/icon-instagram.png');
+}
+
+.social__icon--discord {
+  background-image: url('../images/icon-discord.png');
+}
+
+.social__link {
+  color: #97e300;
+}
