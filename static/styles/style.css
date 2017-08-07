@@ -155,6 +155,8 @@ body {
   background-position: center center;
   background-repeat: no-repeat;
   background-size: contain;
+  text-indent: -9999px;
+  font-size: 0;
 }
 
 .social__icon + .social__icon {
