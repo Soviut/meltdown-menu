@@ -61,13 +61,37 @@ body {
   overflow: hidden;
 }
 
+.page {
+}
+
+.page__main {
+  position: relative;
+}
+
 .screen {
+  position: absolute;
+  top: 0;
+  left: 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
   width: 56.25vh;
   height: 100vh;
   margin: 0 auto;
+
+  opacity: 0;
+  transition: opacity 1s linear;
+}
+
+.screen--current {
+  opacity: 1;
+}
+
+.screen--specials {
+  padding: 2vh;
+}
+
+.screen--schedule {
 }
 
 .screen__header {
@@ -79,10 +103,6 @@ body {
 
 .screen__footer {
   margin-top: 3vh;
-}
-
-.screen--specials {
-  padding: 2vh;
 }
 
 .logo {
