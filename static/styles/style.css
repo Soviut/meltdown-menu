@@ -65,11 +65,11 @@ body {
   width: 56.25vh;
   height: 100vh;
   margin: 0 auto;
-  padding: 1vh;
+  padding: 2vh;
 }
 
 .screen__header {
-  margin-bottom: 3vh;
+  margin-bottom: 4vh;
 }
 
 .screen__body {
@@ -85,12 +85,19 @@ body {
 .logo {
   display: inline-block;
   width: 20vh;
-  height: 18vh;
 
   background: url('../images/logo.png') center center no-repeat;
   background-size: contain;
   text-indent: -9999px;
+  font-size: 0;
   animation: pulse 1300ms ease-in-out infinite alternate;
+}
+
+.logo::after {
+  content: '';
+  display: block;
+  padding-top: 90%;
+  width: 100%;
 }
 
 .menu {
