@@ -1,20 +1,18 @@
 $(function() {
+  let current = 0
+  let delay = 5000
+
   let screens = $('.screen')
-  let current = 0;
-  
-  screens.removeClass('screen--current')
-  screens.eq(current).addClass('screen--current')
+
+  function switchScreen(i) {
+    screens.removeClass('screen--current')
+    screens.eq(i).addClass('screen--current')
+  }
+  switchScreen(current)
 
   setInterval(function() {
-    current++
-
-    if (current >= screens.length) {
-      current = 0
-    }
-
-    console.log(current)
-
-    screens.removeClass('screen--current')
-    screens.eq(current).addClass('screen--current')
-  }, 5000)
+    // wrap index if it exceeds the total number of screens
+    current = current + 1 >= screens.length ? 0 : current + 1
+    switchScreen(current)
+  }, delay)
 })
