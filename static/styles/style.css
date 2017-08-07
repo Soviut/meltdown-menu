@@ -1,48 +1,48 @@
 @font-face {
-    font-family: 'Industry';
-    font-style: normal;
-    font-weight: 300;
-    src: url("../fonts/Industry_Medium.otf") format("opentype");
+  font-family: 'Industry';
+  font-style: normal;
+  font-weight: 300;
+  src: url("../fonts/Industry_Medium.otf") format("opentype");
 }
 
 @font-face {
-    font-family: 'Industry';
-    font-style: normal;
-    font-weight: 400;
-    src: url("../fonts/Industry_Book.otf") format("opentype");
+  font-family: 'Industry';
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/Industry_Book.otf") format("opentype");
 }
 
 @font-face {
-    font-family: 'Industry';
-    font-style: normal;
-    font-weight: normal;
-    src: url("../fonts/Industry_Book.otf") format("opentype");
+  font-family: 'Industry';
+  font-style: normal;
+  font-weight: normal;
+  src: url("../fonts/Industry_Book.otf") format("opentype");
 }
 
 @font-face {
-    font-family: 'Industry';
-    font-style: normal;
-    font-weight: 500;
-    src: url("../fonts/Industry_Bold.otf") format("opentype");
+  font-family: 'Industry';
+  font-style: normal;
+  font-weight: 500;
+  src: url("../fonts/Industry_Bold.otf") format("opentype");
 }
 
 @font-face {
-    font-family: 'Industry';
-    font-style: normal;
-    font-weight: bold;
-    src: url("../fonts/Industry_Bold.otf") format("opentype");
+  font-family: 'Industry';
+  font-style: normal;
+  font-weight: bold;
+  src: url("../fonts/Industry_Bold.otf") format("opentype");
 }
 
 @font-face {
-    font-family: 'Industry';
-    font-style: normal;
-    font-weight: 700;
-    src: url("../fonts/Industry_Ultra.otf") format("opentype");
+  font-family: 'Industry';
+  font-style: normal;
+  font-weight: 700;
+  src: url("../fonts/Industry_Ultra.otf") format("opentype");
 }
 
 @keyframes pulse {
-    from { transform: scale(1); }
-    to   { transform: scale(1.05); }
+  from { transform: scale(1); }
+  to   { transform: scale(1.05); }
 }
 
 html {
@@ -166,7 +166,8 @@ body {
 }
 
 .social__link {
-  margin-top: 0.5em;
+  margin-top: 0.3em;
 
-  color: #97e300;
+  font-size: 1.3em;
+  color: #FFF;
 }
