@@ -62,6 +62,9 @@ body {
 }
 
 .screen {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   width: 56.25vh;
   height: 100vh;
   margin: 0 auto;
