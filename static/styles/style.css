@@ -45,64 +45,66 @@
   to   { transform: scale(1.05); }
 }
 
-html {
-  height: 100%;
+* {
+  box-sizing: border-box;
 }
 
 body {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  box-sizing: border-box;
-  padding: 30px;
-  height: 100%;
+  padding: 0;
+  margin: 0;
 
-  font-family: Industry, arial, helvetica, san-serif;
   background: #000 url('../images/background.png') top center;
   background-size: cover;
+  font-family: Industry, arial, helvetica, san-serif;
   color: #FFF;
   text-align: center;
   overflow: hidden;
 }
 
-.page {
-  max-width: 400px;
+.screen {
+  width: 56.25vh;
+  height: 100vh;
   margin: 0 auto;
-
-  /* need to scale for TV */  
-  transform: scale(1.6);
+  padding: 1vh;
 }
 
-.page__header {
-  margin-bottom: 60px;
+.screen__header {
+  margin-bottom: 3vh;
 }
 
-.page__footer {
-  margin-top: 60px;
+.screen__body {
+}
+
+.screen__footer {
+  margin-top: 3vh;
+}
+
+.screen--specials {
 }
 
 .logo {
   display: inline-block;
-  width: 227px;
-  height: 206px;
+  width: 20vh;
+  height: 18vh;
 
   background: url('../images/logo.png') center center no-repeat;
+  background-size: contain;
   text-indent: -9999px;
   animation: pulse 1300ms ease-in-out infinite alternate;
 }
 
 .menu {
   margin: 0 auto;
-  padding: 0;
-  max-width: 400px;
+  padding: 0 8vh;
 
   list-style: outside none;
 }
 
 .menu__item {
-  padding: 60px 0 10px 0;
+  padding: 5vh 0 0.5vh 0;
 
-  background: url('../images/divider.png') center 10px no-repeat;
+  background: url('../images/divider.png') center 0.5vh no-repeat;
+  background-size: 100% auto;
 }
 
 .item {
@@ -110,25 +112,25 @@ body {
 
 .item__title {
   margin: 0;
-  margin-bottom: 0.2em;
+  margin-bottom: 1vh;
 
-  font-size: 2.5em;
-  line-height: 1em;
+  font-size: 4.4vh;
   font-weight: 500;
   text-transform: uppercase;
 }
 
 .item__description {
   margin: 0;
-  margin-bottom: 0.5em;
+  margin-bottom: 1vh;
 
+  font-size: 1.6vh;
   color: #97e300;
 }
 
 .item__price {
-  margin-top: 1.2em;
+  margin-top: 2vh;
 
-  font-size: 1.5em;
+  font-size: 2.5vh;
   font-weight: 500;
 }
 
@@ -137,8 +139,8 @@ body {
 
 .social__icon {
   display: inline-block;
-  width: 35px;
-  height: 35px;
+  width: 3.7vh;
+  height: 3.7vh;
 
   background-position: center center;
   background-repeat: no-repeat;
@@ -146,7 +148,7 @@ body {
 }
 
 .social__icon + .social__icon {
-  margin-left: 10px;
+  margin-left: 1vh;
 }
 
 .social__icon--facebook {
@@ -166,8 +168,8 @@ body {
 }
 
 .social__link {
-  margin-top: 0.3em;
+  margin-top: 1vh;
 
-  font-size: 1.3em;
+  font-size: 2.2vh;
   color: #FFF;
 }
