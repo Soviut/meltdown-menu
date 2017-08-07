@@ -1,18 +1,19 @@
 $(function() {
   let current = 0
-  let delay = 1000 * 60 * 2 // minutes as milliseconds
+  // let delay = 1000 * 60 * 2 // minutes as milliseconds
+  let delay = 5000
 
-  let screens = $('.screen')
+  let slides = $('.carousel__slide')
 
   function switchScreen(i) {
-    screens.removeClass('screen--current')
-    screens.eq(i).addClass('screen--current')
+    slides.removeClass('carousel__slide--current')
+    slides.eq(i).addClass('carousel__slide--current')
   }
   switchScreen(current)
 
   setInterval(function() {
-    // wrap index if it exceeds the total number of screens
-    current = current + 1 >= screens.length ? 0 : current + 1
+    // wrap index if it exceeds the total number of slides
+    current = current + 1 >= slides.length ? 0 : current + 1
     switchScreen(current)
   }, delay)
 })

@@ -61,30 +61,32 @@ body {
   overflow: hidden;
 }
 
-.page {
-}
-
-.page__main {
+.carousel {
   position: relative;
 }
 
-.screen {
+.carousel__slide {
   position: absolute;
   top: 0;
   left: 0;
+  width: 100%;
+  height: 100%;
+
+  opacity: 0;
+  transition: opacity 2s linear;
+}
+
+.carousel__slide--current {
+  opacity: 1;
+}
+
+.screen {
   display: flex;
   flex-direction: column;
   justify-content: center;
   width: 56.25vh;
   height: 100vh;
   margin: 0 auto;
-
-  opacity: 0;
-  transition: opacity 1s linear;
-}
-
-.screen--current {
-  opacity: 1;
 }
 
 .screen--specials {
