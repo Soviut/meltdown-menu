@@ -1,6 +1,6 @@
 $(function() {
   let current = 0
-  let delay = 1000 * 60 * 2 // minutes as milliseconds
+  let delay = 1000 * 30 // seconds as milliseconds
 
   let slides = $('.carousel__slide')
 

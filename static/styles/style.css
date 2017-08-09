@@ -94,6 +94,7 @@ body {
 }
 
 .screen--schedule {
+  padding: 2vh;
 }
 
 .screen__header {
@@ -217,4 +218,51 @@ body {
 
   background: url('../images/schedule.png') center center no-repeat;
   background-size: cover;
+}
+
+.schedule__item {
+}
+
+.schedule__item + .schedule__item {
+  margin-top: 2vh;
+}
+
+.schedule-item {
+  display: flex;
+  align-items: center;
+
+  font-size: 2.2vh;
+}
+
+.schedule-item__date {
+  width: 6vh;
+  
+  text-align: right;
+  color: #97e300;
+}
+
+.schedule-item__title {
+  flex-grow: 2;
+
+  color: #FFF;
+}
+
+.icon-list {
+  display: flex;
+  padding: 0;
+  margin: 0;
+
+  list-style: none outside;
+}
+
+.icon-list__item {
+  width: 5vh;
+  height: 5vh;
+  background: #CCC;
+
+  text-indent: -9999px;
+}
+
+.icon-list__item + .icon-list__item {
+  margin-left: 1vh;
 }
