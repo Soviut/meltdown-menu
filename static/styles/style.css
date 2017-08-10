@@ -259,11 +259,6 @@ body {
 }
 
 .icon-list__item {
-  width: 5vh;
-  height: 5vh;
-  background: #CCC;
-
-  text-indent: -9999px;
 }
 
 .icon-list__item + .icon-list__item {
@@ -286,4 +281,34 @@ body {
   font-size: 1.6vh;
   font-weight: 300;
   color: #97e300;
+}
+
+.icon {
+  width: 5vh;
+  height: 5vh;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
+
+  text-indent: -9999px;
+}
+
+.icon--super-smash-bros {
+  background-image: url('../images/icon-super-smash-bros.png');
+}
+
+.icon--street-fighter-7 {
+  background-image: url('../images/icon-street-fighter-7.png');
+}
+
+.icon--dota-2 {
+  background-image: url('../images/icon-dota-2.png');
+}
+
+.icon--tekken-7 {
+  background-image: url('../images/icon-tekken-7.png');
+}
+
+.icon--toronto-top-tiers {
+  background-image: url('../images/icon-toront-top-tiers.png');
 }
