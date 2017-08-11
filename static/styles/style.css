@@ -182,6 +182,8 @@ body {
   font-size: 0;
 }
 
+/* TODO: unify with icon-list */
+
 .social__icon + .social__icon {
   margin-left: 1vh;
 }
@@ -225,6 +227,10 @@ body {
 
 .schedule__item + .schedule__item {
   margin-top: 2vh;
+  padding: 5vh 0 0.5vh 0;
+
+  background: url('../images/divider.png') center 0.5vh no-repeat;
+  background-size: 100% auto;
 }
 
 .schedule-item {
