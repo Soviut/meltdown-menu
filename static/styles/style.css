@@ -244,6 +244,7 @@ body {
 .schedule-item__date {
   width: 6vh;
   
+  align-self: flex-start;
   font-weight: 700;
   text-align: right;
   color: #97e300;
