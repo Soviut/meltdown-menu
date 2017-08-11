@@ -61,6 +61,25 @@ body {
   overflow: hidden;
 }
 
+.carousel {
+  position: relative;
+}
+
+.carousel__slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  opacity: 0;
+  transition: opacity 2s linear;
+}
+
+.carousel__slide--current {
+  opacity: 1;
+}
+
 .screen {
   display: flex;
   flex-direction: column;
@@ -68,7 +87,14 @@ body {
   width: 56.25vh;
   height: 100vh;
   margin: 0 auto;
+}
+
+.screen--specials {
   padding: 2vh;
+}
+
+.screen--schedule {
+  padding: 2vh 6vh;
 }
 
 .screen__header {
@@ -80,9 +106,6 @@ body {
 
 .screen__footer {
   margin-top: 3vh;
-}
-
-.screen--specials {
 }
 
 .logo {
@@ -159,6 +182,8 @@ body {
   font-size: 0;
 }
 
+/* TODO: unify with icon-list */
+
 .social__icon + .social__icon {
   margin-left: 1vh;
 }
@@ -184,4 +209,125 @@ body {
 
   font-size: 2.2vh;
   color: #FFF;
+}
+
+.schedule {
+}
+
+.schedule__image {
+  width: 100%;
+  height: 100vh;
+
+  background: url('../images/schedule.png') center center no-repeat;
+  background-size: cover;
+}
+
+.schedule__item {
+}
+
+.schedule__item + .schedule__item {
+  margin-top: 2vh;
+  padding: 5vh 0 0.5vh 0;
+
+  background: url('../images/divider.png') center 0.5vh no-repeat;
+  background-size: 100% auto;
+}
+
+.schedule-item {
+  display: flex;
+  align-items: center;
+
+  font-size: 2.2vh;
+  text-align: left;
+}
+
+.schedule-item__date {
+  width: 6vh;
+  
+  align-self: flex-start;
+  font-weight: 700;
+  text-align: right;
+  color: #97e300;
+}
+
+.schedule-item__title {
+  flex-grow: 2;
+  margin-left: 2vh;
+
+  color: #FFF;
+}
+
+.icon-list {
+  display: flex;
+  padding: 0;
+  margin: 0;
+
+  list-style: none outside;
+}
+
+.icon-list__item {
+}
+
+.icon-list__item + .icon-list__item {
+  margin-left: 1vh;
+}
+
+.title {
+}
+
+.title__primary {
+  margin: 0;
+
+  font-size: 2.2vh;
+  font-weight: 500;
+}
+
+.title__secondary {
+  margin: 0;
+
+  font-size: 1.6vh;
+  font-weight: 300;
+  color: #97e300;
+}
+
+.icon {
+  width: 5vh;
+  height: 5vh;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
+
+  text-indent: -9999px;
+}
+
+.icon--super-smash-bros {
+  background-image: url('../images/icon-super-smash-bros.png');
+}
+
+.icon--street-fighter-5 {
+  background-image: url('../images/icon-street-fighter-5.png');
+}
+
+.icon--dota-2 {
+  background-image: url('../images/icon-dota-2.png');
+}
+
+.icon--tekken-7 {
+  background-image: url('../images/icon-tekken-7.png');
+}
+
+.icon--toronto-top-tiers {
+  background-image: url('../images/icon-toronto-top-tiers.png');
+}
+
+.icon--hearthstone {
+  background-image: url('../images/icon-hearthstone.png');
+}
+
+.schedule__title {
+  margin: 0;
+
+  font-size: 4.4vh;
+  font-weight: 500;
+  text-transform: uppercase;
 }
