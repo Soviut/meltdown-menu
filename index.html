@@ -62,15 +62,15 @@
               </header>
 
               <div class="screen__body">
-                <div class="schedule">
+                <div id="schedule" class="schedule">
 
-                  <div class="schedule__item">
+                  <div class="schedule__item" v-for="item in items">
                     <div class="schedule-item">
-                      <div class="schedule-item__date">Mon</div>
+                      <div class="schedule-item__date">{{ item.day }}</div>
                       <div class="schedule-item__title">
                         <div class="title">
-                          <h3 class="title__primary">Tekken 7</h3>
-                          <h4 class="title__secondary">Presented by Toronto Top Tiers</h4>
+                          <h3 class="title__primary">{{ item.title }}</h3>
+                          <h4 class="title__secondary">{{ item.subtitle }}</h4>
                         </div>
                       </div>
                       <div class="schedule-item__icons">
@@ -80,123 +80,6 @@
                           </li>
                           <li class="icon-list__item">
                             <div class="icon icon--toronto-top-tiers">Toronto Top Tiers</div>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="schedule__item">
-                    <div class="schedule-item">
-                      <div class="schedule-item__date">Tues</div>
-                      <div class="schedule-item__title">
-                        <div class="title">
-                          <h3 class="title__primary">THG Casual Cup</h3>
-                          <h4 class="title__secondary">Presented by Toronto Hearthstone Guild</h4>
-                        </div>
-                      </div>
-                      <div class="schedule-item__icons">
-                        <ul class="icon-list">
-                          <li class="icon-list__item">
-                            <div class="icon icon--hearthstone">Hearthstone</div>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="schedule__item">
-                    <div class="schedule-item">
-                      <div class="schedule-item__date">Wed</div>
-                      <div class="schedule-item__title">
-                        <div class="title">
-                          <h3 class="title__primary">Street Fighter V</h3>
-                          <h4 class="title__secondary">Presented by Toronto Top Tiers</h4>
-                        </div>
-                      </div>
-                      <div class="schedule-item__icons">
-                        <ul class="icon-list">
-                          <li class="icon-list__item">
-                            <div class="icon icon--street-fighter-5">Street Fighter V</div>
-                          </li>
-                          <li class="icon-list__item">
-                            <div class="icon icon--toronto-top-tiers">Toronto Top Tiers</div>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="schedule__item">
-                    <div class="schedule-item">
-                      <div class="schedule-item__date">Thur</div>
-                      <div class="schedule-item__title">
-                        <div class="title">
-                          <h3 class="title__primary">Super Smash Bros Melee</h3>
-                          <h4 class="title__secondary">Presented by Smash City</h4>
-                        </div>
-                      </div>
-                      <div class="schedule-item__icons">
-                        <ul class="icon-list">
-                          <li class="icon-list__item">
-                            <div class="icon icon--super-smash-bros">Super Smash Bros</div>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="schedule__item">
-                    <div class="schedule-item">
-                      <div class="schedule-item__date">Fri</div>
-                      <div class="schedule-item__title">
-                        <div class="title">
-                          <h3 class="title__primary">Dota 2: The International</h3>
-                          <h4 class="title__secondary">Viewing Party</h4>
-                        </div>
-                      </div>
-                      <div class="schedule-item__icons">
-                        <ul class="icon-list">
-                          <li class="icon-list__item">
-                            <div class="icon icon--dota-2">Dota 2</div>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="schedule__item">
-                    <div class="schedule-item">
-                      <div class="schedule-item__date">Sat</div>
-                      <div class="schedule-item__title">
-                        <div class="title">
-                          <h3 class="title__primary">Dota 2: The International</h3>
-                          <h4 class="title__secondary">Viewing Party</h4>
-                        </div>
-                      </div>
-                      <div class="schedule-item__icons">
-                        <ul class="icon-list">
-                          <li class="icon-list__item">
-                            <div class="icon icon--dota-2">Dota 2</div>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="schedule__item">
-                    <div class="schedule-item">
-                      <div class="schedule-item__date">Sun</div>
-                      <div class="schedule-item__title">
-                        <div class="title">
-                          <h3 class="title__primary">Super Smash Bros for Wii U</h3>
-                          <h4 class="title__secondary">Presented by No Chill Gaming</h4>
-                        </div>
-                      </div>
-                      <div class="schedule-item__icons">
-                        <ul class="icon-list">
-                          <li class="icon-list__item">
-                            <div class="icon icon--super-smash-bros">Super Smash Bros</div>
                           </li>
                         </ul>
                       </div>

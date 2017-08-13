@@ -1,6 +1,5 @@
 let apiKey = 'AIzaSyCaY54phJEa6e2CtRZtmDt66XsicmmZRas'
 let spreadsheetId = '1SLjvtSUp4aacbUO7_2KymP-_Wtye07JWfEkm-oAdxpA'
-let range = 'menu!A2:C10' // line 1 is column titles, skip
 
 function fetchData(range) {
   let url = `https://sheets.googleapis.com/v4/spreadsheets/${spreadsheetId}/values/${range}?key=${apiKey}`
@@ -25,15 +24,31 @@ var specials = new Vue({
   }
 })
 
-fetchData(range).done(function(res) {
+// line 1 of the sheet is column titles, skip by starting at A2
+fetchData('menu!A2:C10').done(function(res) {
   specials.items = res.values.map(val => {
     return {
       title: val[0],
       price: val[1],
-      description: val[2],
+      description: val[2]
     }
   })
+})
 
-  console.log(specials.items)
-  //specials.$data.items = res.values
+var schedule = new Vue({
+  el: '#schedule',
+  data: {
+    items: []
+  }
+})
+
+// line 1 of the sheet is column titles, skip by starting at A2
+fetchData('schedule!A2:F8').done(function(res) {
+  schedule.items = res.values.map(val => {
+    return {
+      day: val[0],
+      title: val[1],
+      subtitle: val[2]
+    }
+  })
 })
