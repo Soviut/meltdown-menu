@@ -5,42 +5,35 @@ let range = 'menu!A2:C10' // line 1 is column titles, skip
 function fetchData(range) {
   let url = `https://sheets.googleapis.com/v4/spreadsheets/${spreadsheetId}/values/${range}?key=${apiKey}`
 
-  $(function() {
-    $.ajax({
-      url: url,
-      method: 'GET',
-      dataType: 'json'
-    })
-    .done(function(res) {
-      console.log(res)
-    })
-    .fail(function(err) {
-      console.log(err)
-    })
+  return $.ajax({
+    url: url,
+    method: 'GET',
+    dataType: 'json'
+  })
+  .done(function(res) {
+    console.log(res)
+  })
+  .fail(function(err) {
+    console.log(err)
   })
 }
 
-fetchData(range)
-
-var app = new Vue({
+var specials = new Vue({
   el: '#specials',
   data: {
-    items: [
-      {
-        title: 'Mill St. Pints',
-        description: 'Organic Lager, Amber Lager, IPA, Stout',
-        price: 800
-      },
-      {
-        title: 'Bar Rails',
-        description: 'Vodka, Rum, Gin, Whiskey, Scotch and Tequila',
-        price: 500
-      },
-      {
-        title: 'Super Meat Boy',
-        description: 'A 4oz beef burger patty with cheese on two Jamaican beef patties for buns',
-        price: 800
-      }
-    ]
+    items: []
+  }
+})
+
+fetchData(range).done(function(res) {
+  specials.items = res.values.map(val => {
+    return {
+      title: val[0],
+      price: val[1],
+      description: val[2],
     }
+  })
+
+  console.log(specials.items)
+  //specials.$data.items = res.values
 })
