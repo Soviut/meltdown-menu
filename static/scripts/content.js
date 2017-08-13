@@ -21,3 +21,26 @@ function fetchData(range) {
 }
 
 fetchData(range)
+
+var app = new Vue({
+  el: '#specials',
+  data: {
+    items: [
+      {
+        title: 'Mill St. Pints',
+        description: 'Organic Lager, Amber Lager, IPA, Stout',
+        price: 800
+      },
+      {
+        title: 'Bar Rails',
+        description: 'Vodka, Rum, Gin, Whiskey, Scotch and Tequila',
+        price: 500
+      },
+      {
+        title: 'Super Meat Boy',
+        description: 'A 4oz beef burger patty with cheese on two Jamaican beef patties for buns',
+        price: 800
+      }
+    ]
+    }
+})

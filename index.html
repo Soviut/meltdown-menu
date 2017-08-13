@@ -9,8 +9,7 @@
       src="https://code.jquery.com/jquery-3.2.1.min.js"
       integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
       crossorigin="anonymous"></script>
-    <script src="static/scripts/carousel.js"></script>
-    <script src="static/scripts/content.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.4.2/vue.min.js"></script>
 
     <link href="static/styles/style.css" rel="stylesheet" type="text/css">
     <link href="favicon.ico" rel="shortcut icon" type="image/x-icon">
@@ -20,6 +19,42 @@
     <div class="page">
       <main class="page__main">
         <div class="carousel">
+
+          <section class="carousel__slide">
+            <div class="screen screen--specials">
+              <header class="screen__header">
+                <h1 class="logo">Meltdown Menu</h1>
+              </header>
+
+              <div class="screen__body">
+                <ul id="specials" class="menu">
+                  <li class="menu__item" v-for="item in items">
+                    <div class="item">
+                      <h3 class="item__title">{{ item.title }}</h3>
+                      <p class="item__description">{{ item.description }}</p>
+                      <div class="item__price">
+                        <div class="price">
+                          <span class="price__currency">$</span> 
+                          <span class="price__amount">{{ Math.floor(item.price / 100) }}</span>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+
+              <footer class="screen__footer">
+                <div class="social">
+                  <div class="social__icon social__icon--facebook">facebook.com</div>
+                  <div class="social__icon social__icon--twitter">twitter.com</div>
+                  <div class="social__icon social__icon--instagram">instagram.com</div>
+                  <div class="social__icon social__icon--discord">discord.gg</div>
+                  <div class="social__link"> /MeltdownToronto</div>
+                </div>
+              </footer>
+            </div>
+          </section>
+
           <section class="carousel__slide">
             <div class="screen screen--schedule">
               <header class="screen__header">
@@ -172,68 +207,11 @@
             </div>
           </section>
 
-          <section class="carousel__slide">
-            <div class="screen screen--specials">
-              <header class="screen__header">
-                <h1 class="logo">Meltdown Menu</h1>
-              </header>
-
-              <div class="screen__body">
-                <ul class="menu">
-                  <li class="menu__item">
-                    <div class="item">
-                      <h3 class="item__title">Mill St. Pints</h3>
-                      <p class="item__description">Organic Lager, Amber Lager, IPA, Stout</p>
-                      <div class="item__price">
-                        <div class="price">
-                          <span class="price__currency">$</span> 
-                          <span class="price__amount">8</span>
-                        </div>
-                      </div>
-                    </div>
-                  </li>
-
-                  <li class="menu__item">
-                    <div class="item">
-                      <h3 class="item__title">Bar Rails</h3>
-                      <p class="item__description">Vodka, Rum, Gin, Whiskey, Scotch and Tequila</p>
-                      <div class="item__price">
-                        <div class="price">
-                          <span class="price__currency">$</span> 
-                          <span class="price__amount">5</span>
-                        </div>
-                      </div>
-                    </div>
-                  </li>
-
-                  <li class="menu__item">
-                    <div class="item">
-                      <h3 class="item__title">Super Meat Boy</h3>
-                      <p class="item__description">A 4oz beef burger patty with cheese on two Jamaican beef patties for buns</p>
-                      <div class="item__price">
-                        <div class="price">
-                          <span class="price__currency">$</span> 
-                          <span class="price__amount">8</span>
-                        </div>
-                      </div>
-                    </div>
-                  </li>
-                </ul>
-              </div>
-
-              <footer class="screen__footer">
-                <div class="social">
-                  <div class="social__icon social__icon--facebook">facebook.com</div>
-                  <div class="social__icon social__icon--twitter">twitter.com</div>
-                  <div class="social__icon social__icon--instagram">instagram.com</div>
-                  <div class="social__icon social__icon--discord">discord.gg</div>
-                  <div class="social__link"> /MeltdownToronto</div>
-                </div>
-              </footer>
-            </div>
-          </section>
         </div>
       </main>
     </div>
+
+    <script src="static/scripts/carousel.js"></script>
+    <script src="static/scripts/content.js"></script>
   </body>
 </html>
