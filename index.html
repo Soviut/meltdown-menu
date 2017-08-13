@@ -21,6 +21,38 @@
         <div class="carousel">
 
           <section class="carousel__slide">
+            <div class="screen screen--schedule">
+              <header class="screen__header">
+                <h2 class="schedule__title">Schedule</h2>
+              </header>
+
+              <div class="screen__body">
+                <div id="schedule" class="schedule">
+
+                  <div class="schedule__item" v-for="item in items">
+                    <div class="schedule-item">
+                      <div class="schedule-item__date">{{ item.day }}</div>
+                      <div class="schedule-item__title">
+                        <div class="title">
+                          <h3 class="title__primary">{{ item.title }}</h3>
+                          <h4 class="title__secondary">{{ item.subtitle }}</h4>
+                        </div>
+                      </div>
+                      <div class="schedule-item__icons">
+                        <ul class="icon-list">
+                          <li class="icon-list__item" v-for="icon in item.icons">
+                            <div class="icon" v-bind:class="['icon--' + icon]">{{ icon }}</div>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+
+              </div>
+            </div>
+          </section>
+
+          <section class="carousel__slide">
             <div class="screen screen--specials">
               <header class="screen__header">
                 <h1 class="logo">Meltdown Menu</h1>
@@ -52,41 +84,6 @@
                   <div class="social__link"> /MeltdownToronto</div>
                 </div>
               </footer>
-            </div>
-          </section>
-
-          <section class="carousel__slide">
-            <div class="screen screen--schedule">
-              <header class="screen__header">
-                <h2 class="schedule__title">Schedule</h2>
-              </header>
-
-              <div class="screen__body">
-                <div id="schedule" class="schedule">
-
-                  <div class="schedule__item" v-for="item in items">
-                    <div class="schedule-item">
-                      <div class="schedule-item__date">{{ item.day }}</div>
-                      <div class="schedule-item__title">
-                        <div class="title">
-                          <h3 class="title__primary">{{ item.title }}</h3>
-                          <h4 class="title__secondary">{{ item.subtitle }}</h4>
-                        </div>
-                      </div>
-                      <div class="schedule-item__icons">
-                        <ul class="icon-list">
-                          <li class="icon-list__item">
-                            <div class="icon icon--tekken-7">Tekken 7</div>
-                          </li>
-                          <li class="icon-list__item">
-                            <div class="icon icon--toronto-top-tiers">Toronto Top Tiers</div>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-
-              </div>
             </div>
           </section>
 

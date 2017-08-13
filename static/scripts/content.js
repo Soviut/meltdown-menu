@@ -48,7 +48,8 @@ fetchData('schedule!A2:F8').done(function(res) {
     return {
       day: val[0],
       title: val[1],
-      subtitle: val[2]
+      subtitle: val[2],
+      icons: val.slice(3)
     }
   })
 })
