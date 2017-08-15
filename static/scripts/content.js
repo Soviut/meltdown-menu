@@ -1,5 +1,6 @@
 let apiKey = 'AIzaSyCaY54phJEa6e2CtRZtmDt66XsicmmZRas'
 let spreadsheetId = '1SLjvtSUp4aacbUO7_2KymP-_Wtye07JWfEkm-oAdxpA'
+let reloadDelay = 1000 * 60 * 60 // 1 hour in milliseconds
 
 function fetchData(range) {
   let url = `https://sheets.googleapis.com/v4/spreadsheets/${spreadsheetId}/values/${range}?key=${apiKey}`
@@ -64,3 +65,6 @@ function fetch() {
 }
 
 fetch()
+
+// reload content periodically
+setInterval(fetch, reloadDelay)
