@@ -9,7 +9,7 @@
       src="https://code.jquery.com/jquery-3.2.1.min.js"
       integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
       crossorigin="anonymous"></script>
-    <script src="static/scripts/carousel.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.4.2/vue.min.js"></script>
 
     <link href="static/styles/style.css" rel="stylesheet" type="text/css">
     <link href="favicon.ico" rel="shortcut icon" type="image/x-icon">
@@ -19,6 +19,7 @@
     <div class="page">
       <main class="page__main">
         <div class="carousel">
+
           <section class="carousel__slide">
             <div class="screen screen--schedule">
               <header class="screen__header">
@@ -26,141 +27,21 @@
               </header>
 
               <div class="screen__body">
-                <div class="schedule">
+                <div id="schedule" class="schedule">
 
-                  <div class="schedule__item">
+                  <div class="schedule__item" v-for="item in items">
                     <div class="schedule-item">
-                      <div class="schedule-item__date">Mon</div>
+                      <div class="schedule-item__date">{{ item.day }}</div>
                       <div class="schedule-item__title">
                         <div class="title">
-                          <h3 class="title__primary">Tekken 7</h3>
-                          <h4 class="title__secondary">Presented by Toronto Top Tiers</h4>
+                          <h3 class="title__primary">{{ item.title }}</h3>
+                          <h4 class="title__secondary">{{ item.subtitle }}</h4>
                         </div>
                       </div>
                       <div class="schedule-item__icons">
                         <ul class="icon-list">
-                          <li class="icon-list__item">
-                            <div class="icon icon--tekken-7">Tekken 7</div>
-                          </li>
-                          <li class="icon-list__item">
-                            <div class="icon icon--toronto-top-tiers">Toronto Top Tiers</div>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="schedule__item">
-                    <div class="schedule-item">
-                      <div class="schedule-item__date">Tues</div>
-                      <div class="schedule-item__title">
-                        <div class="title">
-                          <h3 class="title__primary">THG Casual Cup</h3>
-                          <h4 class="title__secondary">Presented by Toronto Hearthstone Guild</h4>
-                        </div>
-                      </div>
-                      <div class="schedule-item__icons">
-                        <ul class="icon-list">
-                          <li class="icon-list__item">
-                            <div class="icon icon--hearthstone">Hearthstone</div>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="schedule__item">
-                    <div class="schedule-item">
-                      <div class="schedule-item__date">Wed</div>
-                      <div class="schedule-item__title">
-                        <div class="title">
-                          <h3 class="title__primary">Street Fighter V</h3>
-                          <h4 class="title__secondary">Presented by Toronto Top Tiers</h4>
-                        </div>
-                      </div>
-                      <div class="schedule-item__icons">
-                        <ul class="icon-list">
-                          <li class="icon-list__item">
-                            <div class="icon icon--street-fighter-5">Street Fighter V</div>
-                          </li>
-                          <li class="icon-list__item">
-                            <div class="icon icon--toronto-top-tiers">Toronto Top Tiers</div>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="schedule__item">
-                    <div class="schedule-item">
-                      <div class="schedule-item__date">Thur</div>
-                      <div class="schedule-item__title">
-                        <div class="title">
-                          <h3 class="title__primary">Super Smash Bros Melee</h3>
-                          <h4 class="title__secondary">Presented by Smash City</h4>
-                        </div>
-                      </div>
-                      <div class="schedule-item__icons">
-                        <ul class="icon-list">
-                          <li class="icon-list__item">
-                            <div class="icon icon--super-smash-bros">Super Smash Bros</div>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="schedule__item">
-                    <div class="schedule-item">
-                      <div class="schedule-item__date">Fri</div>
-                      <div class="schedule-item__title">
-                        <div class="title">
-                          <h3 class="title__primary">Dota 2: The International</h3>
-                          <h4 class="title__secondary">Viewing Party</h4>
-                        </div>
-                      </div>
-                      <div class="schedule-item__icons">
-                        <ul class="icon-list">
-                          <li class="icon-list__item">
-                            <div class="icon icon--dota-2">Dota 2</div>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="schedule__item">
-                    <div class="schedule-item">
-                      <div class="schedule-item__date">Sat</div>
-                      <div class="schedule-item__title">
-                        <div class="title">
-                          <h3 class="title__primary">Dota 2: The International</h3>
-                          <h4 class="title__secondary">Viewing Party</h4>
-                        </div>
-                      </div>
-                      <div class="schedule-item__icons">
-                        <ul class="icon-list">
-                          <li class="icon-list__item">
-                            <div class="icon icon--dota-2">Dota 2</div>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="schedule__item">
-                    <div class="schedule-item">
-                      <div class="schedule-item__date">Sun</div>
-                      <div class="schedule-item__title">
-                        <div class="title">
-                          <h3 class="title__primary">Super Smash Bros for Wii U</h3>
-                          <h4 class="title__secondary">Presented by No Chill Gaming</h4>
-                        </div>
-                      </div>
-                      <div class="schedule-item__icons">
-                        <ul class="icon-list">
-                          <li class="icon-list__item">
-                            <div class="icon icon--super-smash-bros">Super Smash Bros</div>
+                          <li class="icon-list__item" v-for="icon in item.icons">
+                            <div class="icon" v-bind:class="['icon--' + icon]">{{ icon }}</div>
                           </li>
                         </ul>
                       </div>
@@ -178,41 +59,15 @@
               </header>
 
               <div class="screen__body">
-                <ul class="menu">
-                  <li class="menu__item">
+                <ul id="specials" class="menu">
+                  <li class="menu__item" v-for="item in items">
                     <div class="item">
-                      <h3 class="item__title">Mill St. Pints</h3>
-                      <p class="item__description">Organic Lager, Amber Lager, IPA, Stout</p>
+                      <h3 class="item__title">{{ item.title }}</h3>
+                      <p class="item__description">{{ item.description }}</p>
                       <div class="item__price">
                         <div class="price">
                           <span class="price__currency">$</span> 
-                          <span class="price__amount">8</span>
-                        </div>
-                      </div>
-                    </div>
-                  </li>
-
-                  <li class="menu__item">
-                    <div class="item">
-                      <h3 class="item__title">Bar Rails</h3>
-                      <p class="item__description">Vodka, Rum, Gin, Whiskey, Scotch and Tequila</p>
-                      <div class="item__price">
-                        <div class="price">
-                          <span class="price__currency">$</span> 
-                          <span class="price__amount">5</span>
-                        </div>
-                      </div>
-                    </div>
-                  </li>
-
-                  <li class="menu__item">
-                    <div class="item">
-                      <h3 class="item__title">Super Meat Boy</h3>
-                      <p class="item__description">A 4oz beef burger patty with cheese on two Jamaican beef patties for buns</p>
-                      <div class="item__price">
-                        <div class="price">
-                          <span class="price__currency">$</span> 
-                          <span class="price__amount">8</span>
+                          <span class="price__amount">{{ item.price }}</span>
                         </div>
                       </div>
                     </div>
@@ -231,8 +86,12 @@
               </footer>
             </div>
           </section>
+
         </div>
       </main>
     </div>
+
+    <script src="static/scripts/carousel.js"></script>
+    <script src="static/scripts/content.js"></script>
   </body>
 </html>
