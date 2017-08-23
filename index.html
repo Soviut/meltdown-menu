@@ -21,6 +21,16 @@
         <div class="carousel">
 
           <section class="carousel__slide">
+            <div class="screen screen--promo">
+              <div class="screen__body">
+                <div id="promos" class="promo">
+                  <img class="promo__image" v-if="items.length" v-bind:src="items[0].imageUrl">
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="carousel__slide">
             <div class="screen screen--schedule">
               <header class="screen__header">
                 <h2 class="schedule__title">Schedule</h2>

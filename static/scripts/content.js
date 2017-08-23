@@ -32,6 +32,13 @@ let schedule = new Vue({
   }
 })
 
+let promos = new Vue({
+  el: '#promos',
+  data: {
+    items: []
+  }
+})
+
 function fetchMenu() {
   // line 1 of the sheet is column titles, skip by starting at A2
   fetchData('menu!A2:C10').done(function(res) {
@@ -59,9 +66,22 @@ function fetchSchedule() {
   })
 }
 
+function fetchPromos() {
+  // line 1 of the sheet is column titles, skip by starting at A2
+  fetchData('promos!A2:B10').done(function(res) {
+    promos.items = res.values.map(val => {
+      return {
+        name: val[0],
+        imageUrl: val[1]
+      }
+    })
+  })
+}
+
 function fetch() {
   fetchMenu()
   fetchSchedule()
+  fetchPromos()
 }
 
 fetch()
