@@ -16,21 +16,21 @@
   </head>
 
   <body>
-    <div class="page">
+    <div id="page" class="page">
       <main class="page__main">
         <div class="carousel">
 
-          <section id="promos" class="carousel__slide" v-if="items.length">
+          <section class="carousel__slide" v-if="promos.length">
             <div class="screen screen--promo">
               <div class="screen__body">
                 <div class="promo">
-                  <img class="promo__image" v-if="items.length" v-bind:src="items[0].imageUrl">
+                  <img class="promo__image" v-bind:src="promos[0].imageUrl" v-if="promos.length">
                 </div>
               </div>
             </div>
           </section>
 
-          <section class="carousel__slide">
+          <section class="carousel__slide" :class="{'carousel__slide--current': }">
             <div class="screen screen--schedule">
               <header class="screen__header">
                 <h2 class="schedule__title">Schedule</h2>
@@ -38,8 +38,7 @@
 
               <div class="screen__body">
                 <div id="schedule" class="schedule">
-
-                  <div class="schedule__item" v-for="item in items">
+                  <div class="schedule__item" v-for="item in schedule">
                     <div class="schedule-item">
                       <div class="schedule-item__date">{{ item.day }}</div>
                       <div class="schedule-item__title">
@@ -70,7 +69,7 @@
 
               <div class="screen__body">
                 <ul id="specials" class="menu">
-                  <li class="menu__item" v-for="item in items">
+                  <li class="menu__item" v-for="item in specials">
                     <div class="item">
                       <h3 class="item__title">{{ item.title }}</h3>
                       <p class="item__description">{{ item.description }}</p>
@@ -101,7 +100,6 @@
       </main>
     </div>
 
-    <script src="static/scripts/carousel.js"></script>
     <script src="static/scripts/content.js"></script>
   </body>
 </html>
