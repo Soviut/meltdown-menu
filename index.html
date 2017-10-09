@@ -20,7 +20,10 @@
       <main class="page__main">
         <div class="carousel">
 
-          <section class="carousel__slide" v-if="promos.length">
+          <section class="carousel__slide"
+            v-if="promos.length"
+            :class="{'carousel__slide--current':currentScreen === 'promos' }"
+          >
             <div class="screen screen--promo">
               <div class="screen__body">
                 <div class="promo">
@@ -30,7 +33,10 @@
             </div>
           </section>
 
-          <section class="carousel__slide" :class="{'carousel__slide--current': }">
+          <section class="carousel__slide"
+            v-if="schedule.length"
+            :class="{'carousel__slide--current':currentScreen === 'schedule' }"
+          >
             <div class="screen screen--schedule">
               <header class="screen__header">
                 <h2 class="schedule__title">Schedule</h2>
@@ -61,7 +67,10 @@
             </div>
           </section>
 
-          <section class="carousel__slide">
+          <section class="carousel__slide"
+            v-if="specials.length"
+            :class="{'carousel__slide--current':currentScreen === 'specials' }"
+          >
             <div class="screen screen--specials">
               <header class="screen__header">
                 <h1 class="logo">Meltdown Menu</h1>

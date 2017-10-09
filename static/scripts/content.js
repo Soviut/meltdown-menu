@@ -1,6 +1,7 @@
 let apiKey = 'AIzaSyCaY54phJEa6e2CtRZtmDt66XsicmmZRas'
 let spreadsheetId = '1SLjvtSUp4aacbUO7_2KymP-_Wtye07JWfEkm-oAdxpA'
 let reloadDelay = 1000 * 60 * 60 // 1 hour in milliseconds
+let screenDelay = 1000 * 30 // seconds
 
 function fetchData(range) {
   let url = `https://sheets.googleapis.com/v4/spreadsheets/${spreadsheetId}/values/${range}?key=${apiKey}`
@@ -25,16 +26,34 @@ let site = new Vue({
     schedule: [],
     promos: [],
 
-    currentSlide: 0,
-    totalSlides: 3
+    screens: [], // screens are named so this will be a list of strings
+
+    currentScreen: null // will eventually be a string
   },
   created: function() {
     fetch()
+    .then((data) => {
+      if (this.screens.length > 0) {
+        this.currentScreen = this.screens[0]
+        startTimer()
+      }
+    })
   },
-  advanceSlide: function() {
-    
+  methods: {
+    advanceScreen() {
+      let index = this.screens.indexOf(this.currentScreen)
+      index++
+      index = index > this.screens.length - 1 ? 0 : index
+      this.currentScreen = this.screens[index]
+    }
   }
 })
+
+function startTimer() {
+  return setInterval(function() {
+    site.advanceScreen()
+  }, screenDelay)
+}
 
 function fetchMenu() {
   // line 1 of the sheet is column titles, skip by starting at A2
@@ -82,18 +101,25 @@ function fetchPromos() {
 }
 
 function fetch() {
-  Promise.all([
+  return Promise.all([
     fetchMenu(),
     fetchSchedule(),
     fetchPromos()
   ])
   .then(function(data) {
     [specials, schedule, promos] = data
-    totalSlides = 0
-    totalSlides = specials.values.length > 0 ? totalSlides + 1 : totalSlides
-    totalSlides = schedule.values.length > 0 ? totalSlides + 1 : totalSlides
-    totalSlides = promos.values.length > 0 ? totalSlides + 1 : totalSlides
-    site.totalSlides = totalSlides
+
+    if (specials.values.length > 0) {
+      site.screens.push('specials')
+    }
+
+    if (schedule.values.length > 0) {
+      site.screens.push('schedule')
+    }
+
+    if (promos.values.length > 0) {
+      site.screens.push('promos')
+    }
   })
 }
 
