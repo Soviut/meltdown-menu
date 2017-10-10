@@ -1,6 +1,7 @@
 let apiKey = 'AIzaSyCaY54phJEa6e2CtRZtmDt66XsicmmZRas'
 let spreadsheetId = '1SLjvtSUp4aacbUO7_2KymP-_Wtye07JWfEkm-oAdxpA'
 let reloadDelay = 1000 * 60 * 60 // 1 hour in milliseconds
+let screenDelay = 1000 * 30 // seconds
 
 function fetchData(range) {
   let url = `https://sheets.googleapis.com/v4/spreadsheets/${spreadsheetId}/values/${range}?key=${apiKey}`
@@ -18,33 +19,48 @@ function fetchData(range) {
   })
 }
 
-let specials = new Vue({
-  el: '#specials',
+let site = new Vue({
+  el: '#page',
   data: {
-    items: []
+    specials: [],
+    schedule: [],
+    promos: [],
+
+    screens: [], // screens are named so this will be a list of strings
+
+    currentScreen: null // will eventually be a string
+  },
+  created: function() {
+    fetch()
+    .then((data) => {
+      if (this.screens.length > 0) {
+        this.currentScreen = this.screens[0]
+        startTimer()
+      }
+    })
+  },
+  methods: {
+    advanceScreen() {
+      let index = this.screens.indexOf(this.currentScreen)
+      index++
+      index = index > this.screens.length - 1 ? 0 : index
+      this.currentScreen = this.screens[index]
+    }
   }
 })
 
-let schedule = new Vue({
-  el: '#schedule',
-  data: {
-    items: []
-  }
-})
-
-let promos = new Vue({
-  el: '#promos',
-  data: {
-    items: []
-  }
-})
+function startTimer() {
+  return setInterval(function() {
+    site.advanceScreen()
+  }, screenDelay)
+}
 
 function fetchMenu() {
   // line 1 of the sheet is column titles, skip by starting at A2
-  fetchData('menu!A2:C10').done(function(res) {
+  return fetchData('menu!A2:C10').done(function(res) {
     // res.values is omitted if there are no items
     let values = res.values ? res.values : []
-    specials.items = values.map(val => {
+    site.specials = values.map(val => {
       return {
         title: val[0],
         price: val[1],
@@ -56,10 +72,10 @@ function fetchMenu() {
 
 function fetchSchedule() {
   // line 1 of the sheet is column titles, skip by starting at A2
-  fetchData('schedule!A2:F8').done(function(res) {
+  return fetchData('schedule!A2:F8').done(function(res) {
     // res.values is omitted if there are no items
     let values = res.values ? res.values : []
-    schedule.items = values.map(val => {
+    site.schedule = values.map(val => {
       return {
         day: val[0],
         title: val[1],
@@ -72,10 +88,10 @@ function fetchSchedule() {
 
 function fetchPromos() {
   // line 1 of the sheet is column titles, skip by starting at A2
-  fetchData('promos!A2:B10').done(function(res) {
+  return fetchData('promos!A2:B10').done(function(res) {
     // res.values is omitted if there are no items
     let values = res.values ? res.values : []
-    promos.items = values.map(val => {
+    site.promos = values.map(val => {
       return {
         name: val[0],
         imageUrl: val[1]
@@ -85,12 +101,27 @@ function fetchPromos() {
 }
 
 function fetch() {
-  fetchMenu()
-  fetchSchedule()
-  fetchPromos()
-}
+  return Promise.all([
+    fetchMenu(),
+    fetchSchedule(),
+    fetchPromos()
+  ])
+  .then(function(data) {
+    [specials, schedule, promos] = data
 
-fetch()
+    if (specials.values.length > 0) {
+      site.screens.push('specials')
+    }
+
+    if (schedule.values.length > 0) {
+      site.screens.push('schedule')
+    }
+
+    if (promos.values.length > 0) {
+      site.screens.push('promos')
+    }
+  })
+}
 
 // reload content periodically
 setInterval(fetch, reloadDelay)
