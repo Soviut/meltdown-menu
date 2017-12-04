@@ -20,18 +20,20 @@
       <main class="page__main">
         <div class="carousel">
 
-          <section class="carousel__slide"
-            v-if="promos.length"
-            :class="{'carousel__slide--current':currentScreen === 'promos' }"
-          >
-            <div class="screen screen--promo">
-              <div class="screen__body">
-                <div class="promo">
-                  <img class="promo__image" v-if="items.length" v-bind:src="items[0].imageUrl">
+          <template v-if="promos.length">
+            <section class="carousel__slide"
+              v-for="promo in promos"
+              :class="{'carousel__slide--current':currentScreen === 'promo-' + promo.name }"
+            >
+              <div class="screen screen--promo">
+                <div class="screen__body">
+                  <div class="promo">
+                    <img class="promo__image" v-bind:src="promo.imageUrl">
+                  </div>
                 </div>
               </div>
-            </div>
-          </section>
+            </section>
+          </template>
 
           <section class="carousel__slide"
             v-if="schedule.length"

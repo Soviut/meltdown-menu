@@ -1,7 +1,8 @@
 let apiKey = 'AIzaSyCaY54phJEa6e2CtRZtmDt66XsicmmZRas'
 let spreadsheetId = '1SLjvtSUp4aacbUO7_2KymP-_Wtye07JWfEkm-oAdxpA'
 let reloadDelay = 1000 * 60 * 60 // 1 hour in milliseconds
-let screenDelay = 1000 * 30 // seconds
+// let screenDelay = 1000 * 30 // seconds
+let screenDelay = 5000 // seconds
 
 function fetchData(range) {
   let url = `https://sheets.googleapis.com/v4/spreadsheets/${spreadsheetId}/values/${range}?key=${apiKey}`
@@ -93,7 +94,7 @@ function fetchPromos() {
     let values = res.values ? res.values : []
     site.promos = values.map(val => {
       return {
-        name: val[0],
+        name: normalizeName(val[0]),
         imageUrl: val[1]
       }
     })
@@ -118,9 +119,14 @@ function fetch() {
     }
 
     if (promos.values.length > 0) {
-      site.screens.push('promos')
+      site.promos.forEach(promo => site.screens.push(`promo-${promo.name}`))
     }
   })
+}
+
+// lowercase, only alphanumeric characters, spaces become dashes
+function normalizeName(name) {
+  return name.toLowerCase().replace(/\s/g, '-').replace('/[^a-z0-9-]/g', '')
 }
 
 // reload content periodically
