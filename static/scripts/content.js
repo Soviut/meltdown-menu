@@ -1,8 +1,7 @@
 let apiKey = 'AIzaSyCaY54phJEa6e2CtRZtmDt66XsicmmZRas'
 let spreadsheetId = '1SLjvtSUp4aacbUO7_2KymP-_Wtye07JWfEkm-oAdxpA'
 let reloadDelay = 1000 * 60 * 60 // 1 hour in milliseconds
-// let screenDelay = 1000 * 30 // seconds
-let screenDelay = 5000 // seconds
+let screenDelay = 1000 * 30 // seconds
 
 function fetchData(range) {
   let url = `https://sheets.googleapis.com/v4/spreadsheets/${spreadsheetId}/values/${range}?key=${apiKey}`
