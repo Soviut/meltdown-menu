@@ -58,7 +58,7 @@
                       <div class="schedule-item__icons">
                         <ul class="icon-list">
                           <li class="icon-list__item" v-for="icon in item.icons">
-                            <div class="icon" v-bind:class="['icon--' + icon]">{{ icon }}</div>
+                            <div class="icon" :style="{ 'background-image': 'url(' + icon + ')' }">{{ icon }}</div>
                           </li>
                         </ul>
                       </div>
