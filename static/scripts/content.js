@@ -44,10 +44,12 @@ function fetchSchedule() {
 
 function fetchPromos() {
   return [
-    { type: 'promo', name: 'openmic', imageUrl: 'https://s3.ca-central-1.amazonaws.com/menu-cms-dev/Promo-Tall---Open-Mic-01.png' },
-    { type: 'promo', name: 'karaoke', imageUrl: 'https://s3.ca-central-1.amazonaws.com/menu-cms-dev/Promo-Tall---Karaoke-Night-01.png' },
-    { type: 'promo', name: 'jackbox', imageUrl: 'https://s3.ca-central-1.amazonaws.com/menu-cms-dev/Promo-Tall---Jackbox-01.png' },
-    { type: 'promo', name: 'trivia',  imageUrl: 'https://s3.ca-central-1.amazonaws.com/menu-cms-dev/Promo-Tall---Trivia-Night-Camp-Camp-01.png' }
+    { type: 'promo', name: 'openmic',      imageUrl: 'https://s3.ca-central-1.amazonaws.com/menu-cms-dev/Promo-Tall---Open-Mic-01.png' },
+    { type: 'promo', name: 'karaoke',      imageUrl: 'https://s3.ca-central-1.amazonaws.com/menu-cms-dev/Promo-Tall---Karaoke-Night-01.png' },
+    { type: 'promo', name: 'jackbox',      imageUrl: 'https://s3.ca-central-1.amazonaws.com/menu-cms-dev/Promo-Tall---Jackbox-01.png' },
+    { type: 'promo', name: 'triviacamp',   imageUrl: 'https://s3.ca-central-1.amazonaws.com/menu-cms-dev/Promo-Tall---Trivia-Night-Camp-Camp-01.png' },
+    { type: 'promo', name: 'triviabojack', imageUrl: 'https://s3.ca-central-1.amazonaws.com/menu-cms-dev/Promo-Tall---Trivia-Night-Bojack-Horseman-01.png' },
+    { type: 'promo', name: 'triviasunny',  imageUrl: 'https://s3.ca-central-1.amazonaws.com/menu-cms-dev/Promo-Tall---Trivia-Night-Always-Sunny-01.png' }
   ]
 }
 
