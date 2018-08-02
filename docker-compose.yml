@@ -1,7 +1,7 @@
 version: '2'
 services:
   web:
-    image: starefossen/github-pages
+    build: .
     ports:
       - '4000:4000'
     volumes:
