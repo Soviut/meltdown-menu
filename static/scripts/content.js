@@ -1,6 +1,16 @@
 // let reloadDelay = 1000 * 60 * 60 // 1 hour in milliseconds
-let screenDelay = 1000 * 20 // seconds
-// let screenDelay = 1000 * 5 // seconds
+
+let environments = {
+  'http://localhost:4000': {
+    'api_url': 'http://localhost:3000/api/promos',
+    'screen_delay': 1000 * 5 // seconds
+  },
+  'https://soviut.github.io/meltdown-menu': {
+    'api_url': 'https://meltdown-cms-prod.herokuapp.com/api/promos',
+    'screen_delay': 1000 * 20 // seconds
+  }
+}
+let settings = environments[window.location.origin]
 
 let site = new Vue({
   el: '#page',
@@ -34,7 +44,7 @@ let site = new Vue({
 function startTimer() {
   return setInterval(function() {
     site.advanceScreen()
-  }, screenDelay)
+  }, settings.screen_delay)
 }
 
 function fetchSchedule() {
@@ -43,12 +53,17 @@ function fetchSchedule() {
 }
 
 function fetchPromos() {
-  let req = new Request('http://localhost:3000/api/promos')
+  let req = new Request(settings.api_url)
 
   return fetch(req)
     .then(res => res.json())
     // only keep promos with promo_poster_url assets
     .then(data => data.promos.filter(promo => promo.assets.promo_poster_url))
+    .catch(err => {
+      console.error(err)
+      // TODO: display a default poster if fetch fails
+      return []
+    })
 }
 
 function fetchAll() {
