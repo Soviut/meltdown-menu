@@ -5,7 +5,7 @@ let environments = {
     'api_url': 'http://localhost:3000/api/promos',
     'screen_delay': 1000 * 5 // seconds
   },
-  'https://soviut.github.io/meltdown-menu': {
+  'https://soviut.github.io': {
     'api_url': 'https://meltdown-cms-prod.herokuapp.com/api/promos',
     'screen_delay': 1000 * 20 // seconds
   }
