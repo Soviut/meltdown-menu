@@ -6,3 +6,26 @@ services:
       - '4000:4000'
     volumes:
       - '.:/usr/src/app'
+
+  # db:
+  #   image: postgres:10.4
+  #   volumes:
+  #     - "./migrations:/docker-entrypoint-initdb.d/"
+  #   environment:
+  #     - POSTGRES_DB=cms
+
+  # cms:
+  #   image: 120907080622.dkr.ecr.ca-central-1.amazonaws.com/meltdown/meltdown-cms
+  #   ports:
+  #     - "3000:3000"
+  #   depends_on:
+  #     - db
+  #   links:
+  #     - db
+  #   env_file:
+  #     - cms.env
+  #   environment:
+  #     - PGHOST=db
+  #     - PGDATABASE=cms
+  #     - PGUSER=postgres
+  #     - DATABASE_URL=postgres://db:5432/cms
