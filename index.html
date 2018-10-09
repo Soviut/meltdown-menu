@@ -27,7 +27,21 @@
             <div class="screen screen--promo">
               <div class="screen__body">
                 <div class="promo">
-                  <img class="promo__image" v-bind:src="screen.assets.promo_poster_url">
+                  <video
+                    v-if="screen.assets.promo_poster_url.endsWith('.mp4')"
+                    v-bind:src="screen.assets.promo_poster_url"
+                    muted
+                    loop
+                    preload="auto"
+                    autoplay
+                    class="promo__image"
+                  ></video>
+
+                  <img
+                    v-else
+                    v-bind:src="screen.assets.promo_poster_url"
+                    class="promo__image"
+                  >
                 </div>
               </div>
             </div>
